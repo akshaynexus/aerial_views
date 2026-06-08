@@ -1,7 +1,7 @@
 name: aerial_views
 description: "Flutter library for discovering and streaming aerial videos from Apple, Community, Amazon, Immich, and custom feeds."
 version: 0.1.0
-homepage: https://github.com/user/aerial_views
+homepage: https://github.com/akshaynexus/aerial_views
 
 environment:
   sdk: ^3.12.1

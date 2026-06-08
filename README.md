@@ -2,7 +2,7 @@
 
 Flutter library for discovering and streaming aerial videos from Apple, Community, Amazon, Immich, and custom feeds.
 
-Ported from the [AerialViews Android TV](https://github.com/user/AerialViews) app.
+Ported from the [AerialViews Android TV](https://github.com/theothernt/AerialViews/) app.
 
 ## Features
 

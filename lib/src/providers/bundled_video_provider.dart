@@ -90,7 +90,7 @@ abstract class BundledVideoProvider {
   }
 
   Future<List<Map<String, dynamic>>> _loadAssetMaps() async {
-    final json = await rootBundle.loadString(assetJsonPath);
+    final json = await rootBundle.loadString('packages/aerial_views/$assetJsonPath');
     final decoded = jsonDecode(json) as Map<String, dynamic>;
     return (decoded['assets'] as List<dynamic>? ?? [])
         .map((a) => a as Map<String, dynamic>)
@@ -99,7 +99,7 @@ abstract class BundledVideoProvider {
 
   Future<Map<String, String>> _loadStrings() async {
     try {
-      final json = await rootBundle.loadString(stringsJsonPath);
+      final json = await rootBundle.loadString('packages/aerial_views/$stringsJsonPath');
       final decoded = jsonDecode(json) as Map<String, dynamic>;
       return decoded.map((k, v) => MapEntry(k, v.toString()));
     } catch (_) {

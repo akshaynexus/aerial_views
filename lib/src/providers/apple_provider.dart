@@ -22,9 +22,14 @@ class AppleProvider extends BundledVideoProvider {
   @override
   AerialMediaSource get mediaSource => AerialMediaSource.apple;
 
-  /// Apple uses invalid certificates, rewrite to http.
+  /// Returns HTTPS URL (preferred). Certificate is valid as of 2026.
   @override
   String resolveUri(Map<String, dynamic> assetMap, VideoQuality q) {
-    return super.resolveUri(assetMap, q).replaceFirst('https://', 'http://');
+    return super.resolveUri(assetMap, q);
+  }
+
+  /// Returns HTTP fallback URL for when HTTPS certificate validation fails.
+  static String httpFallback(String httpsUrl) {
+    return httpsUrl.replaceFirst('https://', 'http://');
   }
 }
